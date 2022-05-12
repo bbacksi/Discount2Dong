@@ -1,0 +1,202 @@
+@charset "EUC-KR";
+@font-face   {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: yg-jalnan;
+}
+body{
+	height: 100%;
+    background: #f5f6f7 ;
+}
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.mypage {
+  width: 30%;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+h2 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  background-color: #F7323F;
+}
+
+h2:hover {
+   cursor:pointer; 
+}
+
+h4 {
+  margin: 30px 0px;
+  padding-left: 10px;
+}
+
+.submit {
+  margin: 0 auto;
+  width: 90%;
+  padding-left: 5%;
+}
+/* .submit input {
+  border-width: 0.1em;
+  border-radius: 5px 5px 5px 5px;
+  background: linear-gradient(to left, rgb(31, 107, 170), rgb(27, 212, 120));
+  background: white;
+  font-size: 1em;
+  letter-spacing: 1px;
+} */
+.upup{
+	width : 100%;
+	height : 30px;
+	border-width: 0.1em;
+  border-radius: 5px 5px 5px 5px;
+  background: white;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.upd{
+	width : 45%;
+	height : 30px;
+	border-width: 0.1em;
+  border-radius: 5px 5px 5px 5px;
+  background: white;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+
+hr {
+  width: 95%;
+  margin: 10px auto;
+}
+
+.imgAndNick {
+  display: inline-block;
+  padding-left: 10px;
+  height: 70px;
+}
+
+
+.profilediv {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  float: left;
+}
+
+.profile {
+  width: 100%;
+  height : 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 70%;
+  border: 1px solid red;
+}
+
+.nick {
+  float: left;
+  padding-left: 20px;
+}
+
+.plus {
+  margin: 1px 10px;
+}
+.sub  {
+   float: left;
+   text-decoration: none;
+   color: inherit;
+}
+
+.sub:hover {
+   cursor: pointer;
+}
+
+.icon1 {
+  float: right;
+}
+/*내 동네 설정 입력창 숨김  */
+#ground_input {
+   display:none;
+}
+
+#ground_input_check {
+   display:none;
+}
+
+
+/* 관심 물품 입력창 숨김 */
+#item_input {
+   display:none;
+}
+
+#item_input_check {
+   display: none;
+}
+
+/* 관심 물품 입력창 숨김 */
+#shop_input {
+   display:none;
+}
+
+#shop_input_check {
+   display: none;
+}
+
+
+/*내 동네 설정 클릭 시 등장하는 입력 창 */
+#ground_input.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}
+#ground_input_check.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}
+
+/* 관심 물품 클릭시 효과  */
+#item_input.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}
+#item_input_check.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}
+
+/* 관심 물품 클릭시 효과  */
+#shop_input.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}
+#shop_input_check.active {
+   display:block;
+   float: left;
+   margin: 1px 10px;
+}

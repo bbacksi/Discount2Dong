@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/sellerjoin.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<header>
+				<div>
+					<h1>
+						<a href="main.jsp" id="title"> <!-- 메인 링크 --> <span>할인이동</span>
+							<!-- 할인이동 대신 로고로 대체 -->
+						</a>
+
+					</h1>
+				</div>
+			</header>
+
+			<div>
+				<form action="SellerJoinService" method="post"
+					enctype="multipart/form-data">
+					<div>
+						<h3>
+							<label for="id">아이디입력</label>
+						</h3>
+						<span class="signinput"> <input type="text" id="id"
+							name="id" class="int" placeholder="내용을 입력하새요">
+						</span>
+					</div>
+					<div>
+						<h3>
+							<label for="pw">비밀번호</label>
+						</h3>
+						<span class="signinput"> <input type="password" id="pw"
+							name="pw" class="int" placeholder="내용을 입력하새요">
+						</span>
+					</div>
+
+					<div>
+						<h3>
+							<label for="company_bn">사업자등록번호</label>
+						</h3>
+						<span class="signinput"> <input type="text" id="company_bn"
+							name="company_bn" class="int_input" placeholder="숫자만 입력하세요">
+							<input type="button" class="is_check" value="중복확인"
+							onclick="bnCheck()"><br> <br> <span id="spp"></span>
+						</span>
+
+
+					</div>
+					<div>
+						<h3>
+							<label for="company_name">상호명</label>
+						</h3>
+						<span class="signinput"> <input type="text"
+							id="company_name" name="company_name" class="int"
+							placeholder="내용을 입력하새요">
+						</span>
+					</div>
+					<div>
+						<h3>
+							<label for="b_type">업종</label>
+						</h3>
+						<span id="b_type"> <span class="int"> <select
+								class="type_input" name="b_type" id="mm" name="b_type">
+									<option>업종</option>
+									<option value="mart">마트</option>
+									<option value="24store">편의점</option>
+									<option value="clothing store">의류판매</option>
+									<option value="restaurant">음식점</option>
+									<option value="etc">기타</option>
+							</select>
+						</span>
+						</span>
+					</div>
+
+					<div class = "uploadwrap">
+						<h3>
+							<label>프로필사진 or 업체사진1</label>
+						</h3>
+						<div>
+							<input type="file" class="file" accept="image/*" name="company_pic1" id = "company_pic1"
+							onchange = "setThumbnail(event);">
+						</div>
+						<!-- <div id="image_container"><img src = ""></div> -->
+					</div>
+					<div>
+						<h3>
+							<label>업체사진2</label>
+						</h3>
+						<div>
+							<input type="file" class="file" accept="image/*" onchange = "setThumbnail(event);" name="company_pic2" id = "company_pic2">
+						</div>
+						<!-- <div id="image_container"><img src = ""></div> -->
+						
+					</div>
+					<div>
+						<h3>
+							<label>업체사진3</label>
+						</h3>
+						<div>
+							<input type="file" class="file" onchange = "setThumbnail(event);" accept="image/*"
+								name="company_pic3"  id = "company_pic3">
+						</div>
+						<!-- <div id="image_container"><img src = ""></div> -->
+					</div>
+					<div>
+						<h3>
+							<label>업체 소개</label>
+						</h3>
+						<table>
+							<tr>
+								<td colspan="2"><textarea name="company_info" id = "company_info"></textarea></td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<div class="btn_area">
+							<button class="btn_join">
+								<span>가입하기</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		function bnCheck(){
+
+			var input = document.getElementById("company_bn");
+			console.log(input.value);
+
+			$.ajax({
+				type : "post",
+				data : {company_bn : input.value},
+				url : "bnCheckCon",
+				dataType : "text",
+				success : function(data) {
+
+					var spp = document.getElementById("spp");
+
+					if (data == "true") {
+						spp.innerHTML = "사용할수 없는 번호입니다.";
+						document.getElementById('spp').style.color='red'
+						
+					} else {
+						spp.innerHTML = "사용할 수 있는 번호입니다.";
+						document.getElementById('spp').style.color='blue';
+					}
+
+				},
+				error : function() {
+					alert("통신실패!")
+				},
+			})
+		};
+	</script>
+
+<!-- 	<script>
+        function setimg(event){
+            var reader = new FileReader();
+            reader.onload = function(event){
+                var img = document.createElement("img");
+                img.setAttribute("src", event.target.result);
+                img.setAttribute("class", "col-lg-6");
+                document.querySelector("div#image_container").appendChild(img);
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script> -->
+	<script>
+	function setThumbnail(event) {
+        var uploadWrap = event.target.parentNode; 
+              var reader = new FileReader();
+
+               reader.onload = function(event) {
+                    console.log(uploadWrap);
+                    var newImg = document.createElement("img");
+                    uploadWrap.appendChild(newImg);
+                    newImg.setAttribute("src", event.target.result);
+                    newImg.setAttribute("width", 200);
+                    newImg.setAttribute("class", "pre_img");
+            }; 
+            reader.readAsDataURL(event.target.files[0]);
+	}
+/* 
+	<script type="text/javascript">
+	    $(function(){
+	    	$("#company_pic1").change(function(){
+	    		var ext = $(this).val().split('.').pop().toLowerCase();
+	    		if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg'])== -1){
+	    			resetFormElement($(this));
+	    			window.alert('이미지 파일이 아닙니다!');
+	    		}else{
+	    			var file = $(this).prop("files")[0];
+	    			var vlobURL = window.URL.createObjectURL(file);
+	    			$('#image_container img').attr('src', vlobURL).css('width', '100%');
+	    			$('#image_container').slideDown();
+	    		}
+	    		function resetFormElement($obj){
+	    			$obj.val("");
+	    		}
+	    	});
+	    });
+	    
+	    $(function(){
+	    	$("#company_pic2").change(function(){
+	    		var ext = $(this).val().split('.').pop().toLowerCase();
+	    		if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg'])== -1){
+	    			resetFormElement($(this));
+	    			window.alert('이미지 파일이 아닙니다!');
+	    		}else{
+	    			var file = $(this).prop("files")[0];
+	    			var vlobURL = window.URL.createObjectURL(file);
+	    			$('#image_container img').attr('src', vlobURL).css('width', '100%');
+	    			$('#image_container').slideDown();
+	    		}
+	    		function resetFormElement($obj){
+	    			$obj.val("");
+	    		}
+	    	});
+	    });
+	    
+	    $(function(){
+	    	$("#company_pic3").change(function(){
+	    		var ext = $(this).val().split('.').pop().toLowerCase();
+	    		if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg'])== -1){
+	    			resetFormElement($(this));
+	    			window.alert('이미지 파일이 아닙니다!');
+	    		}else{
+	    			var file = $(this).prop("files")[0];
+	    			var vlobURL = window.URL.createObjectURL(file);
+	    			$('#image_container img').attr('src', vlobURL).css('width', '100%');
+	    			$('#image_container').slideDown();
+	    		}
+	    		function resetFormElement($obj){
+	    			$obj.val("");
+	    		}
+	    	});
+	    }); */
+    </script>
+</body>
+</html>

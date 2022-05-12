@@ -1,0 +1,307 @@
+@charset "EUC-KR";
+@font-face   {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+	font-family: "yg-jalnan";
+}
+
+html, body {
+  margin: 0;
+  position: relative;
+  background-color: #f5f6f7;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+#wrapper { 
+	position: relative;
+	height: 100%;
+}
+
+#content {
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%);
+	text-align: center;
+	width: 460px;
+	margin: auto;
+}
+
+#inner {
+	width : 100%;
+	position: absolute;
+	z-index: -1;
+}
+.profile{
+	width: 100%;
+	height : 100%;
+}
+
+.searchBar {
+	text-align: center;
+}
+
+
+.navbar {                   
+  background-color: #F7323F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  color:white;
+	
+}
+.navbar__logo{
+	color:#F7323F;
+}
+.navbar__profile {
+  display: flex;
+  list-style: none;
+}
+
+
+.navbar__menu {
+  width: 25%;
+  padding-left: 0;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+}
+
+.navbar__menu.active {
+  background-color: white;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  z-index: 4;
+  color:black;
+  boder-radius: 10px;
+  boder: solid 1px;
+  margin-top: 0px;
+  
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+  border:solid 2px #F7323F;
+  border-radius: 8px;
+  
+  
+}
+
+.navbar__menu li:hover {
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  border-bottom:solid 1px;
+}
+
+
+
+/*  */
+section {
+	text-align: center;
+}
+
+
+
+.simpleLook{
+	width : 100%;	
+	background-color: white;
+  	display:inline-block;
+  	flex-direction: column;
+  	border:solid 1px #F7323F;
+}
+
+                                   
+div > .img {     
+	width : 30%;
+	height : 100px;
+	float: left;
+	margin: auto auto;
+	
+}
+
+div > .img2 {
+	width : 100%;
+	height : 300px;
+	float: left;
+	margin: auto;
+}
+img {
+	width : 50%;
+	vertical-align:middle;
+}
+
+.hoho {
+	width : 68%;
+	height : 100%;
+	float: left;
+	padding-left: 3px;
+}
+
+.hoho2 {
+	width : 100%;
+	height : 100%;
+	float: left;
+	padding-left: 3px;
+	}
+.notimg {
+	float: left;
+	display: block;
+}
+
+.closerLook{
+	background-color: white;
+	display: inline-block;
+  	flex-direction: column;
+  	width : 100%;	
+  	border : solid 1px #F7323F;
+}
+
+.closerLook.active{
+	background-color: grey;
+  	display: inline-block;
+  	flex-direction: column;
+}
+
+.secretLook{
+	background-color: white;
+	display: inline-block;
+  	flex-direction: column;
+  	width : 100%;	
+  	border:solid 1px #F7323F;
+}
+
+.secretLook.active{
+	background-color: green;
+	float: left;
+  	display: flex;
+  	flex-direction: column;
+}
+
+/*  */
+
+
+h1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: white;
+  margin: 0;
+  line-height: 60px;
+}
+
+section {
+	width :100%;
+}
+
+section .box {
+  height: 500px;
+  background: wheat;
+}
+section .box p {
+  margin: 0;
+  color:  black;
+  padding: 80px 20px;
+}
+section .box:nth-child(2n) {
+  background: silver;
+}
+
+div.snshead > span > #storename {
+  color: blue;
+  display: inline;
+  font-size: xx-large;
+  margin: 0px;
+  vertical-align: top;
+}
+
+div.snshead > span > #dongname {
+  color: red;
+  display: inline;
+  font-size: small;
+  vertical-align: middle;
+}
+
+div.snshead > span > #storekind {
+  color: yellowgreen;
+  display: inline;
+  font-size: small;
+  vertical-align: middle;
+}
+div.snshead.a > img {
+  display: inline;
+}
+
+div.snshead > .tap {
+  text-align: center;
+  border-bottom: 1px solid;
+}
+div.snshead > .tap > button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.clicked {
+  color: silver;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+#inner > section > div:nth-child(1){
+	boder: solid 2px #F7323F;
+}
+#inner > section > div:nth-child(*){
+	color:indigo;
+}
+td{
+	boder:solid 5px;
+}
+button{
+	background-color: none;
+}

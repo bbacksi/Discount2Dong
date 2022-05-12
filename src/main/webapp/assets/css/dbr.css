@@ -1,0 +1,229 @@
+@charset "EUC-KR";
+@font-face   {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+	font-family: "yg-jalnan";
+}
+#wrapper {
+   position: relative;
+   height: 100%;
+}
+
+#content {
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%);
+   text-align: center;
+   width: 460px;
+   margin: auto;
+}
+
+.img123{
+	width : 90%
+}
+html,
+body {
+  margin: 0;
+  font-family: yg-jalnan;
+  
+}
+#inner {
+	width : 100%;
+	position: absolute;
+	z-index: -1;
+}
+/*  */
+
+.navbar {                   
+  background-color: #F7323F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  color:white;
+	
+}
+.navbar__logo{
+	color:#F7323F;
+}
+a{
+	color:black;
+}
+.navbar__profile {
+  display: flex;
+  list-style: none;
+}
+
+
+.navbar__menu {
+  width: 25%;
+  padding-left: 0;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+}
+
+.navbar__menu.active {
+  background-color: white;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  z-index: 4;
+  color:black;
+  boder-radius: 10px;
+  boder: solid 1px;
+  margin-top: 0px;
+  
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+  border:solid 2px #F7323F;
+  border-radius: 8px;
+  
+  
+}
+
+.navbar__menu li:hover {
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  border-bottom:solid 1px;
+}
+
+
+
+#dbr {
+  text-align: center;
+  margin:0px;
+  padding: 0px;
+}
+
+#dbr_box_body_title {
+  text-align: center;
+}
+#dbr_box_body_name {
+  text-align: right;
+  font-size: 20px;
+}
+#dbr_box_body_time {
+  font-size: small;
+  color: gray;
+  text-align: right;
+}
+#dbr_box_body_text {
+  margin: 5px;
+}
+#dbr_box_body_img {
+  text-align: center;
+}
+
+#form-commentInfo {
+  width: 100%;
+}
+
+#comment-count {
+  margin-bottom: 10px;
+}
+
+#comment-input {
+  width: 50%;
+  height: 3.3em;
+}
+
+#submit {
+  background-color: rgb(0, 128, 255);
+  width: 5.5em;
+  height: 3.3em;
+  font-size: 15px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+#voteUp,
+#voteDown {
+  width: 3.5em;
+  height: 1.9em;
+  background-color: aqua;
+}
+
+#comments {
+  margin-top: 10px;
+}
+
+.eachComment {
+  width: 50%;
+  margin: 10px;
+  padding: 0.5em;
+  border-bottom: 1px solid #c1bcba;
+}
+
+.eachComment .name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachComment .inputValue {
+  font-size: 1.2em;
+  font-style: italic;
+}
+#content > div > table:nth-child(4) > tbody > tr:nth-child(1) > td > form{
+	background-color:none;
+}
+.eachComment .time {
+  font-size: 0.7em;
+  color: #c1bcba;
+  font-style: oblique;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#content > div > table:nth-child(2) > tbody > tr:nth-child(3) > td{
+	color:red;
+}
+#content > div > table:nth-child(2) > tbody > tr:nth-child(1) > td{
+	padding:25px;
+}
+
+
+.eachComment .voteDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.eachComment .deleteComment {
+  background-color: red;
+  color: aliceblue;
+}
+#comments > div:nth-child(1n) {
+  border: 1px solid;
+}
+
+caption{
+	background-color: #F7323F;
+	color:white;
+}
+body > table:nth-child(3) > tbody > tr:nth-child(5) > td > div > input.dbr_write_button{
+	font-family: yg-jalnan;
+	background-color: #F7323F;
+	color:white;
+	
+}
+
+
+body > table:nth-child(2) > caption{
+	background-color: #F7323F;
+	color:white;
+	  }
+
+
+
+/*  */

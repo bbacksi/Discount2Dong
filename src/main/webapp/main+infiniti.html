@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav class="navbar">       
+        <div class="navbar__logo">
+            로고 자리
+        </div>
+
+        <div class="navbar__main">
+            할인2동
+        </div>
+
+        <div class="navbar__profile">
+            프로필사진           
+        </div>
+
+    </nav>
+    
+
+        <ul class="navbar__menu">
+            <li><a href="">마이페이지</a></li>
+            <li><a href="">나중에추가</a></li>        
+        </ul>
+
+    
+    <form action="" class="searchBar" align="center">
+        <input type="text" placeholder="검색(상품명, 행정동)">    
+            <button>검색</button>
+        </input>
+    </form>
+
+    <form action="" align="center">
+        <div style="display:inline"><button>담벼락</button></div>
+        <div style="display:inline"><button>간략히</button></div>
+        <div style="display:inline"><button>자세히</button></div>
+    </form>
+
+    <script>
+        const click__profile = document.querySelector('.navbar__profile');
+        const click__profile2 = document.querySelector('.navbar__menu');
+        click__profile.addEventListener('click', () => {
+            click__profile2.classList.toggle('active');
+        });
+    </script>
+
+<section>
+    <div class="box">
+      <p>
+        1번째 블록
+        <div>
+            <div><img src="" alt="">요기엔 이미지를 넣어주세요</div>
+        <p>상호명: 지에스 송원대점</p>
+        <p>오늘 유통기한~오늘넘기면 패기~</p>
+       
+        <p>삼각김밥 폐기팔아요~</p>
+        <p>정가 1400원</p>
+
+        <p>판매가400원</p>
+
+        <p>상호명 피에스 송원대점~</p>
+
+        <p>오늘까지 유통기한~</p>
+
+        
+
+    </div>`
+      </p>
+    </div>
+    <div class="box">
+      <p>
+        2번째 블록
+        <div>
+            <div><img src="" alt="">요기엔 이미지를 넣어주세요</div>
+        <p>상호명: 지에스 송원대점</p>
+        <p>오늘 유통기한~오늘넘기면 패기~</p>
+       
+        <p>삼각김밥 폐기팔아요~</p>
+        <p>정가 1400원</p>
+
+        <p>판매가400원</p>
+
+        <p>상호명 피에스 송원대점~</p>
+
+        <p>오늘까지 유통기한~</p>
+
+        
+
+    </div>`
+      </p>
+    </div>
+  </section>
+  <script>
+    var count = 2;
+    window.onscroll = function(e) {
+      console.log(window.innerHeight , window.scrollY,document.body.offsetHeight)
+      if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { 
+        setTimeout(function(){
+          var addContent = document.createElement("div");
+          addContent.classList.add("box")
+          addContent.innerHTML = `    
+          <p>${++count}번째 블록</p>
+          
+          <div>
+            <div><img src="" alt="">요기엔 이미지를 넣어주세요</div>
+        <p>상호명: 지에스 송원대점</p>
+        <p>오늘 유통기한~오늘넘기면 패기~</p>
+       
+        <p>삼각김밥 폐기팔아요~</p>
+        <p>정가 1400원</p>
+
+        <p>판매가400원</p>
+
+        <p>상호명 피에스 송원대점~</p>
+
+        <p>오늘까지 유통기한~</p>
+        <h2>글내용은 변수처리해서 데이터 베이스에서 불러와야할듯</h2>
+
+        
+
+    </div>`
+          document.querySelector('section').appendChild(addContent);
+        }, 1000)  
+      }
+    }
+  </script>
+    
+</body>
+</html>
